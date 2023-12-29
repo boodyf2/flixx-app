@@ -645,23 +645,23 @@ function addCommasToNumber(number) {
 function init() {
   switch (global.currentPage) {
     case "/":
-    case "/index.html":
+    case "index.html":
       displaySlider();
       displayPopularMovies();
       break;
-    case "/shows.html":
+    case "shows.html":
       displayPopularShows();
       break;
-    case "/search.html":
+    case "search.html":
       search();
       break;
-    case "/movie-details.html":
+    case "movie-details.html":
       displayMovieDetails();
       break;
-    case "/tv-details.html":
+    case "tv-details.html":
       displayShowDetails();
       break;
-    case "/watchlist.html":
+    case "watchlist.html":
       displayWatchlist();
       break;
   }
