@@ -472,10 +472,12 @@ function inDataFromStorage(id) {
 
 async function search() {
   const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
+  const urlParams = new URLSearchParams(window.location.search);
 
-  global.search.type = urlParams.get("type");
-  global.search.term = urlParams.get("search-term");
+  global.search.type = new URLSearchParams(window.location.search).get("type");
+  global.search.term = new URLSearchParams(window.location.search).get(
+    "search-term"
+  );
 
   if (global.search.type !== "" && global.search.term !== "") {
     const { results, total_pages, page, total_results } = await searchAPIData();
