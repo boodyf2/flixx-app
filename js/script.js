@@ -31,7 +31,7 @@ async function displaySlider() {
     const div = document.createElement("div");
     div.classList.add("swiper-slide");
     div.innerHTML = `
-      <a href="movie-details.html?id=${movie.id}">
+      <a href="movie-details?id=${movie.id}">
         <img src="${
           movie.poster_path
             ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
@@ -84,7 +84,7 @@ async function displayPopularMovies() {
     const div = document.createElement("div");
     div.classList.add("card");
     div.innerHTML = `
-      <a href="movie-details.html?id=${movie.id}">
+      <a href="movie-details?id=${movie.id}">
         <img
           src="${
             movie.poster_path
@@ -111,7 +111,7 @@ async function displayPopularShows() {
     const div = document.createElement("div");
     div.classList.add("card");
     div.innerHTML = `
-      <a href="tv-details.html?id=${show.id}">
+      <a href="tv-details?id=${show.id}">
         <img
           src="${
             show.poster_path
@@ -365,8 +365,8 @@ async function getRecomendations(type, id) {
     div.innerHTML = `
       <a href="${
         type === "movie"
-          ? `movie-details.html?id=${result.id}`
-          : `tv-details.html?id=${result.id}`
+          ? `movie-details?id=${result.id}`
+          : `tv-details?id=${result.id}`
       }">
         <img src="${
           result.poster_path
@@ -401,8 +401,8 @@ function displayWatchlist() {
         <div class="overview">
           <a href="${
             data.type === "movie"
-              ? `movie-details.html?id=${data.id}`
-              : `tv-details.html?id=${data.id}`
+              ? `movie-details?id=${data.id}`
+              : `tv-details?id=${data.id}`
           }">
             <img src="${
               data.posterImg ? data.posterImg : "../images/no-image.jpg"
@@ -503,7 +503,7 @@ function displaySearchResults(results) {
     const div = document.createElement("div");
     div.classList.add("card");
     div.innerHTML = `
-        <a href="${global.search.type}-details.html?id=${result.id}">
+        <a href="${global.search.type}-details?id=${result.id}">
           ${
             result.poster_path
               ? `<img
