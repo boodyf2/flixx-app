@@ -471,6 +471,12 @@ function inDataFromStorage(id) {
 }
 
 async function search() {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+
+  global.search.type = urlParams.get("type");
+  global.search.term = urlParams.get("search-term");
+
   if (global.search.type !== "" && global.search.term !== "") {
     const { results, total_pages, page, total_results } = await searchAPIData();
 
@@ -647,11 +653,6 @@ function init() {
       displayPopularShows();
       break;
     case "/search":
-      const queryString = window.location.search;
-      const urlParams = new URLSearchParams(queryString);
-
-      global.search.type = urlParams.get("type");
-      global.search.term = urlParams.get("search-term");
       search();
       break;
     case "/movie-details":
