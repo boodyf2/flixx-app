@@ -5,6 +5,3 @@ demo: https://clever-crisp-5a873e.netlify.app/
 
 # Showcase
 
-<img src="images/showcase_1.png/>
-
-<img src="images/showcase_2.png/>
