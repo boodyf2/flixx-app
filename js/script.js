@@ -652,7 +652,7 @@ function init() {
     case "/shows":
       displayPopularShows();
       break;
-    case "/search":
+    case "/search.html":
       search();
       break;
     case "/movie-details":
